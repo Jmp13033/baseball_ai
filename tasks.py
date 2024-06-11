@@ -6,11 +6,9 @@ from agents import news_researcher, news_writer
 # Tasks require the agent, the tool, description and expected output
 research_task = Task(
   description=(
-    "Identify most likely players to get a hit tonight {topic}."
-    "Focus on the statistics of each player and probabilities of that person getting a hit against the starting pitchers."
-    "Your final report should give players names and probability they will get a hit."
+    "research topic {topic}."
   ),
-  expected_output='A comprehensive list of players names and probabilities of hits tonight.',
+  expected_output='comprehensive lst about the topic',
   tools=[search_tool],
   agent=news_researcher,
 )
@@ -21,12 +19,12 @@ research_task = Task(
 write_task = Task(
   description=(
     "Compose a list {topic}."
-    "focus on the players names and stats as to why they are likely to get a hit tonight"
-    "This article should be easy to understand, engaging, and positive."
   ),
-  expected_output='statistics on each player',
+  expected_output='list of this topic',
   tools=[search_tool],
   agent=news_writer,
   async_execution=False,
-  output_file='AI-article.md'  
+  output_file='output.csv'  
 )
+
+

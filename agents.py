@@ -5,13 +5,15 @@ from tools import search_tool
 
 ## we need model as well as api key to get this to work
 llm = ChatGoogleGenerativeAI(model="gemini-pro",
-                             google_api_key=""
+                             google_api_key="AIzaSyCeVPr2cIFHPLixcU0AvLFN688q_7mfl0U"
                              )
 
 
+
+
 news_researcher=Agent(
-    role="BaseBall Analyst",
-    goal=' provide statistics about players {topic}',
+    role="Researcher",
+    goal=' research about the {topic}',
     verbose=True,
     memory=True,
     backstory=(
